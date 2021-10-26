@@ -114,7 +114,7 @@ def show_histogram(v, cm_unit=100):
     plt.yticks(fontsize=fs)
     plt.xlim([0, 0.15*cm_unit])
 
-    ax.yaxis.set_ticks_position('right')  
+    ax.yaxis.set_ticks_position('right')
 
     # plt.title('Frequency of Velocity', y=-0.3)
 
@@ -125,10 +125,10 @@ def show_histogram(v, cm_unit=100):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument("--scene", default="Seq0005Ant10Image94",
-                        type=str, help="SeqXAntYImageZ")
+    parser.add_argument("--scene", default="Seq0005Object10Image94",
+                        type=str, help="SeqXObjectYImageZ")
     parser.add_argument("--save_fig_dir", default="figures/speed/",
-                        type=str, help="SeqXAntYImageZ")
+                        type=str, help="SeqXObjectYImageZ")
     parser.add_argument("--image_height", default="720",
                         type=str, help="heitght of image")
     args = parser.parse_args()
@@ -136,8 +136,9 @@ if __name__ == '__main__':
     if not os.path.exists(args.save_fig_dir):
         os.makedirs(args.save_fig_dir, exist_ok=True)
 
+    Dataset_root_path = "../"
     for environment in ["IndoorDataset", "OutdoorDataset"]:
-        seq_names = os.listdir(environment)
+        seq_names = os.listdir(Dataset_root_path+environment)
 
         for seq in seq_names:
             print(f"Processing {seq}")

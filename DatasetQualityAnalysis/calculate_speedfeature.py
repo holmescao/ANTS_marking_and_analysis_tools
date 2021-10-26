@@ -12,8 +12,9 @@ import re
 from visualize_speed import getVelocity
 
 cm_unit = 100
+Dataset_root_path = "../"
 for environment in ["IndoorDataset", "OutdoorDataset"]:
-    seq_names = os.listdir(environment)
+    seq_names = os.listdir(Dataset_root_path+environment)
 
     total_v = []
     for seq in seq_names:

@@ -401,9 +401,9 @@ def main_parse_args(sequence_name):
 
 
 if __name__ == "__main__":
-
+    Dataset_root_path = "../"
     for environment in ["IndoorDataset", "OutdoorDataset"]:
-        seq_names = os.listdir(environment)
+        seq_names = os.listdir(Dataset_root_path+environment)
 
         for seq in seq_names:
             st = time.time()
