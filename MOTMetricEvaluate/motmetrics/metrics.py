@@ -502,8 +502,6 @@ simple_add_func.append(num_fragmentations)
 
 def motp(df, num_detections):
     """Multiple object tracker precision."""
-    # print(df.head(10))
-    # print(df.to_csv("motp.csv"))
     return 1. - math_util.quiet_divide(df.noraw['D'].sum(), num_detections)
 
 
@@ -744,8 +742,8 @@ def create():
     m.register(partially_tracked, formatter='{:d}'.format)
     m.register(mostly_lost, formatter='{:d}'.format)
     m.register(num_fragmentations)
-    m.register(mota, formatter='{:.1%}'.format)
     m.register(motp, formatter='{:.1%}'.format)
+    m.register(mota, formatter='{:.1%}'.format)
     m.register(precision, formatter='{:.1%}'.format)
     m.register(recall, formatter='{:.1%}'.format)
 

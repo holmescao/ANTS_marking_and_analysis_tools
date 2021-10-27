@@ -103,7 +103,8 @@ def show_histogram(v, cm_unit=100):
         data.append(item[4]*cm_unit)
 
     fs = 22
-    ax = plt.figure(2)
+    f = plt.figure(2)
+    ax = f.add_subplot(111)
     plt.hist(
         data, bins=40, facecolor='g', alpha=0.75, edgecolor='black')
 
@@ -142,7 +143,7 @@ if __name__ == '__main__':
 
         for seq in seq_names:
             print(f"Processing {seq}")
-            seq_dir = os.path.join(environment, seq)
+            seq_dir = os.path.join(Dataset_root_path+environment, seq)
             seq_img_dir = os.path.join(seq_dir, "img")
             img0_path = os.path.join(seq_img_dir, os.listdir(seq_img_dir)[0])
             img0 = cv2.imread(img0_path)

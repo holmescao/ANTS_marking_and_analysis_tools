@@ -60,11 +60,11 @@ Seqmap for test data
 Sequences of ground truth and test will be matched according to the `<SEQUENCE_X>`
 string in the seqmap.""", formatter_class=argparse.RawTextHelpFormatter)
 
-    parser.add_argument('--groundtruths', type=str, default="../data/motBee/",
+    parser.add_argument('--groundtruths', type=str, default="../IndoorDataset/",
                         help='Directory containing ground truth files.')
-    parser.add_argument('--tests', type=str, default="../unbox_yolov5_deepsort_counting/results/x6/",
+    parser.add_argument('--tests', type=str, default="../results/",
                         help='Directory containing tracker result files')
-    parser.add_argument('--seqmap', type=str, default="./seqmaps/bee.txt",
+    parser.add_argument('--seqmap', type=str, default="./seqmaps/ant.txt",
                         help='Text file containing all sequences name')
     parser.add_argument('--log', type=str, help='a place to record result and outputfile of mistakes', default='')
     parser.add_argument('--loglevel', type=str, help='Log level', default='info')

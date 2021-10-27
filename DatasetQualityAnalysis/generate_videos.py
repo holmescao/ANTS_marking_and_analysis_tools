@@ -408,7 +408,7 @@ if __name__ == "__main__":
         for seq in seq_names:
             st = time.time()
             args = main_parse_args(seq)
-            args.mot_dir = environment
+            args.mot_dir = Dataset_root_path+environment
             if not os.path.exists(args.output_dir):
                 os.makedirs(args.output_dir, exist_ok=True)
             sequence_dir = os.path.join(args.mot_dir, args.sequence_name)

@@ -82,7 +82,7 @@ def load_motchallenge(fname, **kwargs):
         names=['FrameId', 'Id', 'X', 'Y', 'Width', 'Height', 'Confidence', 'ClassId', 'Visibility', 'unused'],
         engine='python'
     )
-
+    df = df.fillna(1)
     # Account for matlab convention.
     df[['X', 'Y']] -= (1, 1)
 

@@ -19,7 +19,8 @@ for environment in ["IndoorDataset", "OutdoorDataset"]:
     total_v = []
     for seq in seq_names:
         [X, Y, Z] = re.findall(r"\d+\.?\d*", seq)
-        filename = os.path.join(environment, seq, "gt", "gt.txt")
+        filename = os.path.join(
+            Dataset_root_path+environment, seq, "gt", "gt.txt")
         v = getVelocity(int(X), int(Y), int(Z), filename)
         # extra v value
         for item in v:
