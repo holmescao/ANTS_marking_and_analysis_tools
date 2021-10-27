@@ -5,7 +5,7 @@ This repository is provided for marking ant motion trajectories dataset from vid
 
 ## Dataset
 
-First you need to download the `https://... `, unzip and extract the `IndoorDataset`, `OutdoorDataset` folders to the current path.
+First you need to download the `https://data.mendeley.com/datasets/9ws98g4npw/3`, unzip and extract the `IndoorDataset`, `OutdoorDataset` folders to the current path.
 
 ## Marking Software
 The marking software (VisualMarkData) is located in the `./VisualMarkData` folder, and the usage can be found in `./VisualMarkData/README.md`.
