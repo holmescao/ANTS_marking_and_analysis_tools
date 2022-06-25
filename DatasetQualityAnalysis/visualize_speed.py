@@ -91,6 +91,7 @@ def show_heatmap(v, image_height, cm_unit=100):
 
     cb = plt.colorbar(pc)
     cb.ax.tick_params(labelsize=fs)
+    cb.set_label('Speed (cm/s)', fontsize=fs+7)
 
     plt.savefig(args.save_fig_dir+'/heatmap_' +
                 args.scene+'.jpg', dpi=300, bbox_inches="tight")
@@ -102,21 +103,22 @@ def show_histogram(v, cm_unit=100):
     for item in v:
         data.append(item[4]*cm_unit)
 
-    fs = 22
+    fs = 27
     f = plt.figure(2)
     ax = f.add_subplot(111)
+
+    # ax.yaxis.set_ticks_position('right')
+    # ax.yaxis.set_label_position('right')
+
     plt.hist(
         data, bins=40, facecolor='g', alpha=0.75, edgecolor='black')
 
-    plt.xlabel('Speed (cm/s)', fontsize=fs+5)
-    plt.ylabel('Frequency', fontsize=fs+5)
+    plt.xlabel('Speed (cm/s)', fontsize=fs+7)
+    plt.ylabel('Frequency', fontsize=fs+7)
 
     plt.xticks(fontsize=fs)
     plt.yticks(fontsize=fs)
     plt.xlim([0, 0.15*cm_unit])
-
-    # ax.yaxis.set_ticks_position('right')
-    # ax.yaxis.set_label_position('right')
 
     # plt.title('Frequency of Speed', y=-0.3)
 
@@ -163,5 +165,5 @@ if __name__ == '__main__':
             show_heatmap(v, args.image_height)
             show_histogram(v)
 
-            import sys
-            sys.exit()
+            # import sys
+            # sys.exit()
