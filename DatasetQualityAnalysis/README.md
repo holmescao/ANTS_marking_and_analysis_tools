@@ -8,7 +8,7 @@ Run the `generate_videos.py` script to display the annotated motion trajectories
 
 ## Motion speed visualization and analysis
 
-Run the `visualize_speed.py` script to get the heat map and frequency histogram of the motion velocity distribution of ants in each image sequence.
+Run the `visualize_speed.py` script to get the heat map and frequency histogram of the motion Speed distribution of ants in each image sequence.
 
 ## Motion speed calculation
 

@@ -9,7 +9,7 @@ FilePath: \show_trajectory\calculate_speedfeature.py
 import os
 import numpy as np
 import re
-from visualize_speed import getVelocity
+from visualize_speed import getSpeed
 
 cm_unit = 100
 Dataset_root_path = "../"
@@ -21,7 +21,7 @@ for environment in ["IndoorDataset", "OutdoorDataset"]:
         [X, Y, Z] = re.findall(r"\d+\.?\d*", seq)
         filename = os.path.join(
             Dataset_root_path+environment, seq, "gt", "gt.txt")
-        v = getVelocity(int(X), int(Y), int(Z), filename)
+        v = getSpeed(int(X), int(Y), int(Z), filename)
         # extra v value
         for item in v:
             total_v.append(item[4]*cm_unit)

@@ -15,7 +15,7 @@ def getRawData(indoor, filename):
     return data
 
 
-def calculateVelocity(a, b, pixel_size, indoor,
+def calculateSpeed(a, b, pixel_size, indoor,
                       indoor_size=0.0085,
                       outdoor_size=0.009,
                       indoor_fps=25,
@@ -34,8 +34,8 @@ def calculateVelocity(a, b, pixel_size, indoor,
     return m_distance/second
 
 
-def getVelocity(indoor, antnum, pixel_size, filename):
-    velocity = []
+def getSpeed(indoor, antnum, pixel_size, filename):
+    Speed = []
     processed_datas = []
 
     # read data
@@ -59,12 +59,12 @@ def getVelocity(indoor, antnum, pixel_size, filename):
 
         for i in range(len(trace)-1):
             temp = trace[i+1]
-            temp.append(calculateVelocity(
+            temp.append(calculateSpeed(
                 trace[i], trace[i+1], pixel_size, indoor))
-            velocity.append(temp)
+            Speed.append(temp)
 
     # [frameId,AntId,AntCenterPosx,AntCenterPosy,speed]
-    return velocity
+    return Speed
 
 
 def show_heatmap(v, image_height, cm_unit=100):
@@ -108,16 +108,17 @@ def show_histogram(v, cm_unit=100):
     plt.hist(
         data, bins=40, facecolor='g', alpha=0.75, edgecolor='black')
 
-    plt.xlabel('Velocity (cm/s)', fontsize=fs+5)
+    plt.xlabel('Speed (cm/s)', fontsize=fs+5)
     plt.ylabel('Frequency', fontsize=fs+5)
 
     plt.xticks(fontsize=fs)
     plt.yticks(fontsize=fs)
     plt.xlim([0, 0.15*cm_unit])
 
-    ax.yaxis.set_ticks_position('right')
+    # ax.yaxis.set_ticks_position('right')
+    # ax.yaxis.set_label_position('right')
 
-    # plt.title('Frequency of Velocity', y=-0.3)
+    # plt.title('Frequency of Speed', y=-0.3)
 
     plt.savefig(args.save_fig_dir+'/histogram_' +
                 args.scene+'.jpg', dpi=300, bbox_inches="tight")
@@ -139,7 +140,7 @@ if __name__ == '__main__':
 
     Dataset_root_path = "../"
     for environment in ["IndoorDataset", "OutdoorDataset"]:
-        seq_names = os.listdir(Dataset_root_path+environment)
+        seq_names = sorted(os.listdir(Dataset_root_path+environment))
 
         for seq in seq_names:
             print(f"Processing {seq}")
@@ -157,7 +158,10 @@ if __name__ == '__main__':
 
             seq_gt_dir = os.path.join(seq_dir, "gt")
             filename = os.path.join(seq_gt_dir, "gt.txt")
-            v = getVelocity(indoor, int(Y), int(Z), filename)
+            v = getSpeed(indoor, int(Y), int(Z), filename)
 
             show_heatmap(v, args.image_height)
             show_histogram(v)
+
+            import sys
+            sys.exit()
