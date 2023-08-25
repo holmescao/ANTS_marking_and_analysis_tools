@@ -15,3 +15,18 @@ The data analysis scripts are in the `./DatasetQualityAnalysis` folder and the u
 
 ## Tracking Performance Evaluation
 The tracking performance evaluation tool is located in the `./MOTMetricEvaluate` folder, and the usage can be found in `./MOTMetricEvaluate/README.md`.
+
+## Citation
+If you find this project useful, please consider to cite our paper. Thank you!
+
+```
+@article{wu2022dataset,
+  title={A dataset of ant colonies’ motion trajectories in indoor and outdoor scenes to study clustering behavior},
+  author={Wu, Meihong and Cao, Xiaoyan and Yang, Ming and Cao, Xiaoyu and Guo, Shihui},
+  journal={GigaScience},
+  volume={11},
+  pages={giac096},
+  year={2022},
+  publisher={Oxford University Press}
+}
+```
