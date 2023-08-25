@@ -1,3 +1,12 @@
+# A dataset of ant colonies’ motion trajectories in indoor and outdoor scenes to study clustering behavior
+
+
+> [**A dataset of ant colonies’ motion trajectories in indoor and outdoor scenes to study clustering behavior**](https://academic.oup.com/gigascience/article/doi/10.1093/gigascience/giac096/6776178)
+> 
+> Meihong Wu*, Xiaoyan Cao*, Ming Yang, Xiaoyu Cao, Shihui Guo (*=equal contribution)
+> 
+> *[GigaScience]([https://arxiv.org/pdf/2308.11157v1.pdf](https://academic.oup.com/gigascience/article/doi/10.1093/gigascience/giac096/6776178))*
+
 # ANTS_marking_and_analysis_tools
 
 This repository is provided for marking ant motion trajectories dataset from video. We provide a marking software, three data quality analysis scripts, and a tracking performance evaluation tool.
